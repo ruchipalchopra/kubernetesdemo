@@ -1,4 +1,4 @@
-name: content-web
+me: content-web
 
 # This workflow is triggered on push to the 'content-web' directory of the  master branch of the repository
 on:
@@ -8,15 +8,15 @@ on:
       paths:
          - 'content-web/**'
 
-   # Configure workflow to also support triggering manually
-   workflow_dispatch:
+# Configure workflow to also support triggering manually
+workflow_dispatch:
 
- # Environment variables are defined so that they can be used throughout the job definitions.
+# Environment variables are defined so that they can be used throughout the job definitions.
  env:
    imageRepository: 'content-web'
-   resourceGroupName: 'fabmedical-[SOL]'
-   containerRegistryName: 'fabmedical[SOL]'
-   containerRegistry: 'fabmedical[SOL].azurecr.io'
+   resourceGroupName: 'fabmedical-cnp4'
+   containerRegistryName: 'fabmedicalRVM'
+   containerRegistry: 'fabmedicalRVM.azurecr.io'
    dockerfilePath: './content-web'
    tag: '${{ github.run_id  }}'
 
